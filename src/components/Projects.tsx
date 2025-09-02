@@ -8,6 +8,8 @@ interface Project {
   features: string[];
   icon: React.ReactNode;
   gradient: string;
+  codeUrl: string;
+  liveUrl: string;
 }
 
 export const Projects: React.FC = () => {
@@ -23,7 +25,9 @@ export const Projects: React.FC = () => {
         'Community engagement features'
       ],
       icon: <Globe size={24} />,
-      gradient: 'from-emerald-500 to-teal-600'
+      gradient: 'from-emerald-500 to-teal-600',
+      codeUrl: 'https://github.com/haashirnawaz9/Masjid-E-KhazraV3', // replace with your repo if needed
+      liveUrl: 'https://masjid-e-khazra.netlify.app/'
     },
     {
       title: 'HashBot AI',
@@ -36,7 +40,9 @@ export const Projects: React.FC = () => {
         'Session management and message history'
       ],
       icon: <Database size={24} />,
-      gradient: 'from-blue-500 to-purple-600'
+      gradient: 'from-blue-500 to-purple-600',
+      codeUrl: 'https://github.com/haashirnawaz9/HashBot-AI', // replace if different
+      liveUrl: 'https://hashbotai.vercel.app/'
     },
     {
       title: 'HashManga',
@@ -49,7 +55,9 @@ export const Projects: React.FC = () => {
         'Responsive design across devices'
       ],
       icon: <Smartphone size={24} />,
-      gradient: 'from-pink-500 to-rose-600'
+      gradient: 'from-pink-500 to-rose-600',
+      codeUrl: 'https://github.com/haashirnawaz9/HashManga', // replace if different
+      liveUrl: 'https://hashmanga.netlify.app/'
     }
   ];
 
@@ -121,14 +129,24 @@ export const Projects: React.FC = () => {
                 
                 <div className="mt-6 pt-4 border-t border-slate-200 dark:border-slate-700">
                   <div className="flex space-x-3">
-                    <button className="flex items-center space-x-1 px-3 py-2 bg-slate-200 dark:bg-slate-700 hover:bg-slate-300 dark:hover:bg-slate-600 rounded-lg transition-colors duration-200 text-sm">
+                    <a
+                      href={project.codeUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center space-x-1 px-3 py-2 bg-slate-200 dark:bg-slate-700 hover:bg-slate-300 dark:hover:bg-slate-600 rounded-lg transition-colors duration-200 text-sm"
+                    >
                       <Github size={16} />
                       <span>Code</span>
-                    </button>
-                    <button className="flex items-center space-x-1 px-3 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors duration-200 text-sm">
+                    </a>
+                    <a
+                      href={project.liveUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center space-x-1 px-3 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors duration-200 text-sm"
+                    >
                       <ExternalLink size={16} />
                       <span>Live Demo</span>
-                    </button>
+                    </a>
                   </div>
                 </div>
               </div>
