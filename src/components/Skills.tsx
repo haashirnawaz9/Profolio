@@ -8,6 +8,7 @@ interface SkillCategory {
   color: string;
 }
 
+
 export const Skills: React.FC = () => {
   const skillCategories: SkillCategory[] = [
     {
